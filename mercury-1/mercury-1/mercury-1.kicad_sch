@@ -1,0 +1,2225 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "1b548578-061f-412b-9a17-10125f836cd9")
+	(paper "A4")
+	(title_block
+		(title "Logic Board Mercury 1")
+		(date "2025-09-12")
+		(rev "V1")
+		(company "BILLEE Rover")
+	)
+	(lib_symbols
+		(symbol "logic_board:XT60PW-F_C428722"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "XT60PW-F_C428722"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "logic_board:TH_2P-XT60PW-F"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/product-detail/C428722.html?s_z=n_XT60"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C428722"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "XT60PW-F_C428722_0_1"
+				(rectangle
+					(start -7.62 2.54)
+					(end 1.27 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -6.35 1.27)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GNDPWR"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GNDPWR"
+				(at 0 -3.302 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GNDPWR_0_1"
+				(polyline
+					(pts
+						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -1.27) (xy -0.762 -2.032) (xy -0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -0.254 -2.032) (xy -0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.27) (xy 0.254 -2.032) (xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy -1.016 -1.27) (xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GNDPWR_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:VCC"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"VCC\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(rectangle
+		(start 15.875 44.45)
+		(end 149.86 136.525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 0f7128d5-1732-4ce3-9905-e2c158a88744)
+	)
+	(rectangle
+		(start 21.59 99.822)
+		(end 27.305 102.997)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type color)
+			(color 6 46 253 1)
+		)
+		(uuid 10484cc9-a26b-4585-99ef-fa4f1e684bfd)
+	)
+	(rectangle
+		(start 19.05 62.865)
+		(end 52.705 87.63)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 4f81f241-cfbe-4602-a2b7-2b021dc9f5fa)
+	)
+	(rectangle
+		(start 21.59 109.347)
+		(end 27.305 112.522)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type color)
+			(color 252 57 253 1)
+		)
+		(uuid 7cc16bb5-ad6b-4ad7-bc86-12135043a65f)
+	)
+	(rectangle
+		(start 15.875 137.795)
+		(end 149.86 194.31)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c2a7086c-9f84-4204-9054-fe44be1f26ca)
+	)
+	(rectangle
+		(start 156.845 13.335)
+		(end 283.845 165.1)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid d86c11ee-f728-428d-a658-cebbe070856c)
+	)
+	(rectangle
+		(start 19.05 90.297)
+		(end 60.96 116.967)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid dc28d94b-ef58-4ca8-8e1b-9a426c7bac7c)
+	)
+	(rectangle
+		(start 21.59 95.377)
+		(end 27.305 98.552)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type color)
+			(color 253 0 0 1)
+		)
+		(uuid e090af94-6c79-4371-8801-03d673589a78)
+	)
+	(rectangle
+		(start 13.335 13.335)
+		(end 154.94 196.215)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid e6cdaf69-423c-4911-95f2-d4a84e598205)
+	)
+	(rectangle
+		(start 21.59 104.267)
+		(end 27.305 107.442)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type color)
+			(color 40 253 62 1)
+		)
+		(uuid febaebad-cdd1-41e3-bfcb-54fcc7d638c8)
+	)
+	(text "Signal Legend"
+		(exclude_from_sim no)
+		(at 27.305 92.583 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "0628585d-b4f9-44ea-8d7f-c6288119b376")
+	)
+	(text "BILLEE Logic Board"
+		(exclude_from_sim no)
+		(at 34.544 17.018 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.4064)
+				(bold yes)
+			)
+		)
+		(uuid "0fee5bab-d785-43dc-a5de-7367eb81554f")
+	)
+	(text "Power Input"
+		(exclude_from_sim no)
+		(at 25.4 64.897 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "130617bf-7af0-4aa4-9ae8-7145e0f1eb59")
+	)
+	(text "= Power Sequencing"
+		(exclude_from_sim no)
+		(at 38.227 101.473 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "2e7d48ca-4984-456d-8bba-1a3b5601a3ea")
+	)
+	(text "Logic Rover Subsystem Requirements"
+		(exclude_from_sim no)
+		(at 53.594 141.224 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "370ce5e4-d17d-47cd-98e6-411e102c3bfb")
+	)
+	(text "System Block Diagram"
+		(exclude_from_sim no)
+		(at 39.624 48.641 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "391a378c-3ef4-4445-a8d2-5acb673914dd")
+	)
+	(text "Concept of Operations"
+		(exclude_from_sim no)
+		(at 179.832 16.51 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "52eced4b-9fad-412b-b96a-c3829bb10cac")
+	)
+	(text "= Serial Protocols"
+		(exclude_from_sim no)
+		(at 37.465 111.125 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "69572f0d-5b8b-4beb-a953-b9575d2132e3")
+	)
+	(text "= Ethernet"
+		(exclude_from_sim no)
+		(at 33.401 106.045 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "bb42df3f-23c5-4651-b963-7f6f996e1a1a")
+	)
+	(text "= Power"
+		(exclude_from_sim no)
+		(at 32.385 97.282 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "e44d70bf-cab7-4b03-9f9f-82dd0970ea61")
+	)
+	(text "Ext. Power"
+		(exclude_from_sim no)
+		(at 141.224 113.919 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "eba6ecdf-b454-458c-8d79-6420986e0c73")
+	)
+	(text_box "Board Description:\n\nThis board seeks to integrate logic controller board that additionally includes temperature, humidity, voltage, and current sensors and manages the RC control logic for the drive train. Additionally, I would like this board to handle Arm control forwarding from the Nvidia Jetson from the network switch.\n\nThis board will utilize an on board processor to handle Rover telemetry, relay arm control commands from the Nvidia Jetson to the arm, and Host a Web server for remote control via our comms RF interface. This board will also handle power sequencing for subsystem control, allowing it to control whether the Arm subsystem is being powered, and whether the Drivetrain system is being powered, that way we can regulate this ourselves over a remote connection."
+		(exclude_from_sim no)
+		(at 15.875 19.685 0)
+		(size 125.73 22.86)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "1e4b295e-ae73-48ec-b48b-9c4b1a796f9a")
+	)
+	(text_box "Define GPIOS for each subsystem and what they do. Reserve pins and software functionality."
+		(exclude_from_sim no)
+		(at 17.78 144.145 0)
+		(size 130.175 48.895)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "7e224ab4-fed5-444b-96b4-ff25e838c48b")
+	)
+	(junction
+		(at 43.18 80.645)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3d235852-f7d5-4b0a-8ac0-7985f538d923")
+	)
+	(polyline
+		(pts
+			(xy 100.965 127) (xy 100.965 112.395)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "0ba982bc-106a-4ceb-9082-1f1fe4716fbe")
+	)
+	(polyline
+		(pts
+			(xy 89.535 102.87) (xy 91.44 100.965)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "0d951550-898a-4bce-82d7-5b9b493aa534")
+	)
+	(polyline
+		(pts
+			(xy 97.155 100.965) (xy 106.68 100.965)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "1c461ec3-996d-408f-b656-717688b163ba")
+	)
+	(wire
+		(pts
+			(xy 46.99 80.645) (xy 43.18 80.645)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cfd8d8c-5669-40ca-b672-399db39eab91")
+	)
+	(polyline
+		(pts
+			(xy 99.06 79.375) (xy 100.965 81.28)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "1ea724df-2b03-4ced-b173-25647950b59d")
+	)
+	(polyline
+		(pts
+			(xy 111.125 50.8) (xy 126.365 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "215be3a5-be39-4db2-acf0-7f80979b2e69")
+	)
+	(polyline
+		(pts
+			(xy 62.23 60.96) (xy 64.135 59.055)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "22cde21a-373f-4ace-b48c-e67fce229ea0")
+	)
+	(polyline
+		(pts
+			(xy 60.325 73.025) (xy 62.23 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "22ddb764-ad5d-481a-ac68-6473edf8ba3e")
+	)
+	(polyline
+		(pts
+			(xy 104.775 110.49) (xy 106.68 112.395)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "24679512-8b2e-4746-821b-7b3bd4590166")
+	)
+	(polyline
+		(pts
+			(xy 106.68 130.175) (xy 106.68 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "26384adc-00ca-483e-aa16-5b39c3a66952")
+	)
+	(polyline
+		(pts
+			(xy 64.135 100.965) (xy 81.915 100.965)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "283fa0af-77bf-4de3-902f-7b5196af034e")
+	)
+	(polyline
+		(pts
+			(xy 64.135 114.935) (xy 64.135 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "28eeef9a-0ded-400d-8e27-b11cb0998161")
+	)
+	(polyline
+		(pts
+			(xy 81.915 100.965) (xy 97.155 100.965)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "29ab2621-5788-4c6d-a373-1629dbf2885b")
+	)
+	(polyline
+		(pts
+			(xy 97.155 114.935) (xy 106.68 114.935)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "306ffa52-56ef-4555-be03-09a5c86c2492")
+	)
+	(polyline
+		(pts
+			(xy 89.535 128.27) (xy 91.44 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "3ce5a3d8-bf0b-4abf-8374-dc15dfbd3a4e")
+	)
+	(polyline
+		(pts
+			(xy 134.62 85.09) (xy 132.715 83.185)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "3d4726b5-23df-4052-9882-918eb5c164d8")
+	)
+	(polyline
+		(pts
+			(xy 142.875 86.36) (xy 132.715 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "3d64a6e4-187e-404e-8484-3dc3268b9099")
+	)
+	(wire
+		(pts
+			(xy 30.48 78.105) (xy 30.48 75.565)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f324d4c-f5ef-49b2-8446-5aafa2d35e8e")
+	)
+	(polyline
+		(pts
+			(xy 100.965 112.395) (xy 106.68 112.395)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "4c1a59df-0e51-4f18-a181-9dc771eb11da")
+	)
+	(polyline
+		(pts
+			(xy 100.965 127) (xy 106.68 127)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "527b6c0c-cecc-49fa-9f6b-9d9cec0ec833")
+	)
+	(polyline
+		(pts
+			(xy 85.09 130.175) (xy 93.345 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "53737106-dd19-4f7a-8768-d0aa937c4828")
+	)
+	(polyline
+		(pts
+			(xy 60.325 74.93) (xy 62.23 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "5a548963-8f7f-4d6b-b71a-ec3bd497eb6f")
+	)
+	(polyline
+		(pts
+			(xy 64.135 86.36) (xy 81.915 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "5d159ea3-333f-4be1-b51a-de66cbdbd7af")
+	)
+	(polyline
+		(pts
+			(xy 64.135 51.435) (xy 64.135 59.055)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "5de2620f-0afa-498a-857d-810c3b0737a9")
+	)
+	(polyline
+		(pts
+			(xy 132.715 83.185) (xy 142.875 83.185)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "5e797223-7d4c-4f9b-8284-7bb528d9ce04")
+	)
+	(polyline
+		(pts
+			(xy 89.535 88.265) (xy 91.44 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "61aadfbf-f905-4796-96a7-f02838dd9795")
+	)
+	(polyline
+		(pts
+			(xy 64.135 114.935) (xy 81.915 114.935)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "61bfa7c2-0890-4ae9-b2ed-65bc41be9ca4")
+	)
+	(polyline
+		(pts
+			(xy 134.62 117.475) (xy 132.715 115.57)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "61c55c81-62e2-4304-a24a-6b6b41ac84d6")
+	)
+	(polyline
+		(pts
+			(xy 93.345 130.175) (xy 106.68 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "636f8045-6ee9-4931-b3ac-655d307b774a")
+	)
+	(polyline
+		(pts
+			(xy 134.62 113.665) (xy 132.715 115.57)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "63939bb7-a577-48df-a3e3-4e6ca0a5beb8")
+	)
+	(polyline
+		(pts
+			(xy 142.875 98.425) (xy 132.715 98.425)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "67f186d5-2442-4389-8d53-50b045c602fe")
+	)
+	(polyline
+		(pts
+			(xy 60.325 76.835) (xy 62.23 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "6cb24d11-ced5-4ff5-b318-d4501ec55c3e")
+	)
+	(polyline
+		(pts
+			(xy 89.535 113.03) (xy 91.44 114.935)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "7315eafc-05b6-42d6-a27d-6b57f05b650f")
+	)
+	(polyline
+		(pts
+			(xy 66.04 60.96) (xy 64.135 59.055)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "7d1bcd57-6dc3-4b7c-bffe-206a042df122")
+	)
+	(wire
+		(pts
+			(xy 30.48 73.025) (xy 33.02 73.025)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e08ca57-534a-4c18-a14c-586976c150d1")
+	)
+	(polyline
+		(pts
+			(xy 118.745 48.895) (xy 120.65 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "86a1d2dd-4372-4efc-bc5b-baba992e72e8")
+	)
+	(polyline
+		(pts
+			(xy 64.135 51.435) (xy 67.31 51.435)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "8d0746cb-c0d5-4cd7-b844-56af18c8fc02")
+	)
+	(polyline
+		(pts
+			(xy 98.425 74.93) (xy 98.425 53.975)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 6 46 253 1)
+		)
+		(uuid "90cb7e35-66dc-4426-9e5b-3edbccb6ec00")
+	)
+	(polyline
+		(pts
+			(xy 142.875 86.36) (xy 142.875 98.425)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "91d33460-6d63-49ab-8a08-ab8d3962d0cc")
+	)
+	(polyline
+		(pts
+			(xy 100.965 112.395) (xy 100.965 52.07)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "947e36f6-778e-4a0a-bfef-6dce743c1ed8")
+	)
+	(polyline
+		(pts
+			(xy 64.135 59.055) (xy 64.135 57.785)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "9935b597-9d46-4f83-86ab-2923d7c2a44b")
+	)
+	(polyline
+		(pts
+			(xy 142.875 83.185) (xy 142.875 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "9af506d4-41d0-4635-b221-3f871a7cff76")
+	)
+	(polyline
+		(pts
+			(xy 81.915 86.36) (xy 97.155 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "9e58a160-a5d1-4c7b-ba87-27c13024b7aa")
+	)
+	(polyline
+		(pts
+			(xy 64.135 130.175) (xy 85.09 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "9e6d510c-1150-4580-a109-be3fba32deb8")
+	)
+	(polyline
+		(pts
+			(xy 104.775 128.905) (xy 106.68 127)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "a03f9712-fca5-454e-b9b0-ea9ff4c54171")
+	)
+	(polyline
+		(pts
+			(xy 81.915 114.935) (xy 97.155 114.935)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "a8825681-7e2c-4de2-93ae-292d0e47edb2")
+	)
+	(polyline
+		(pts
+			(xy 134.62 96.52) (xy 132.715 98.425)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "aff74840-59c4-4437-98b0-48dac2b4cb76")
+	)
+	(wire
+		(pts
+			(xy 30.48 75.565) (xy 33.02 75.565)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0c68249-33ef-4aac-a245-bf11fa95c6e4")
+	)
+	(polyline
+		(pts
+			(xy 126.365 50.8) (xy 142.875 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "b1eb3a24-f74c-411b-95bd-8967ab95f350")
+	)
+	(polyline
+		(pts
+			(xy 104.775 125.095) (xy 106.68 127)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "b391910e-8724-4246-92fc-c8a4811aff6d")
+	)
+	(polyline
+		(pts
+			(xy 134.62 81.28) (xy 132.715 83.185)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "b3f4f816-24ff-4dc5-83ce-4fffbfd0853b")
+	)
+	(polyline
+		(pts
+			(xy 52.705 74.93) (xy 60.325 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "b50b108f-2206-45c8-95ec-c24491cb4633")
+	)
+	(wire
+		(pts
+			(xy 43.18 67.945) (xy 46.99 67.945)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6e556c8-6e1e-4ed9-bf5a-e96b57ade385")
+	)
+	(polyline
+		(pts
+			(xy 97.155 86.36) (xy 106.68 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "b7f0b44b-798c-438c-a782-72412ec15ffb")
+	)
+	(polyline
+		(pts
+			(xy 86.995 76.835) (xy 85.09 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 6 46 253 1)
+		)
+		(uuid "b8b2af8e-8fb4-40cb-87ab-827a48593634")
+	)
+	(polyline
+		(pts
+			(xy 134.62 100.33) (xy 132.715 98.425)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "bee8f9af-c489-4930-8ee3-f4995a86dda8")
+	)
+	(polyline
+		(pts
+			(xy 137.795 84.455) (xy 139.7 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "bf2a953f-5ba3-49b1-ae75-b8ab9bb43d93")
+	)
+	(polyline
+		(pts
+			(xy 89.535 84.455) (xy 91.44 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "bfba1b15-ea55-4373-b1c7-d254859bee54")
+	)
+	(polyline
+		(pts
+			(xy 93.345 50.8) (xy 111.125 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "cf874bc1-24c1-4ab9-abe9-d2daabdbc090")
+	)
+	(polyline
+		(pts
+			(xy 93.345 53.975) (xy 98.425 53.975)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 6 46 253 1)
+		)
+		(uuid "d4d80bf8-f9bf-448c-bd0d-57a7e472d266")
+	)
+	(polyline
+		(pts
+			(xy 93.345 52.07) (xy 100.965 52.07)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "dca91f1c-c2ea-43b9-a90f-ed9639b94b49")
+	)
+	(polyline
+		(pts
+			(xy 132.715 115.57) (xy 141.605 115.57)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "dfa1d2ce-5917-466f-8583-2cb3efc620fb")
+	)
+	(polyline
+		(pts
+			(xy 89.535 116.84) (xy 91.44 114.935)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "e06dbb87-176f-461c-a6a4-bd98f73e74d4")
+	)
+	(polyline
+		(pts
+			(xy 89.535 132.08) (xy 91.44 130.175)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "e1295f0a-d0a2-4610-b3d3-7d6945cf245e")
+	)
+	(polyline
+		(pts
+			(xy 64.135 69.215) (xy 64.135 59.055)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "e15ef6a5-f6b9-4d2c-b973-eae293ac1532")
+	)
+	(polyline
+		(pts
+			(xy 102.87 79.375) (xy 100.965 81.28)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "e6d6b9c5-1358-4aaf-9351-412dea531914")
+	)
+	(polyline
+		(pts
+			(xy 137.795 88.265) (xy 139.7 86.36)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "e8832eab-d65c-4e1a-87ab-e757e7a00358")
+	)
+	(polyline
+		(pts
+			(xy 104.775 114.3) (xy 106.68 112.395)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 252 57 253 1)
+		)
+		(uuid "edb72986-327a-4245-88d6-aa7a7ecdb95c")
+	)
+	(wire
+		(pts
+			(xy 46.99 67.945) (xy 46.99 80.645)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eebaae2d-2b99-4128-80aa-279664e9dfcb")
+	)
+	(polyline
+		(pts
+			(xy 118.745 52.705) (xy 120.65 50.8)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 52 255 42 1)
+		)
+		(uuid "ef6c42e5-fb6a-48a9-82f2-1d3df54ca91e")
+	)
+	(polyline
+		(pts
+			(xy 89.535 99.06) (xy 91.44 100.965)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "f2648179-3596-42b6-92f1-6624bca833af")
+	)
+	(polyline
+		(pts
+			(xy 64.135 81.28) (xy 64.135 114.935)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 253 0 0 1)
+		)
+		(uuid "f7814beb-a311-475c-b46e-e4f74d9c68e8")
+	)
+	(polyline
+		(pts
+			(xy 86.995 73.025) (xy 85.09 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 6 46 253 1)
+		)
+		(uuid "ff0175ef-06e6-40c1-b9f0-d128be49f57d")
+	)
+	(polyline
+		(pts
+			(xy 85.09 74.93) (xy 98.425 74.93)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 6 46 253 1)
+		)
+		(uuid "ff686e20-122b-4881-97a4-f87811af9fae")
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 43.18 80.645 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56d61468-94f0-49d2-895e-ea8467c77951")
+		(property "Reference" "#PWR02"
+			(at 43.18 85.725 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 43.053 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 81.915 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 43.18 80.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e44a55de-ad5a-4d5e-88b5-d75df8ec1c06")
+		)
+		(instances
+			(project ""
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "logic_board:XT60PW-F_C428722")
+		(at 43.18 73.025 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "59826f09-d1bf-4f5d-9e8c-2cbfa1864359")
+		(property "Reference" "U1"
+			(at 35.56 68.961 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "XT60PW-F"
+			(at 36.576 66.421 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "logic_board:TH_2P-XT60PW-F"
+			(at 43.18 88.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C428722.html?s_z=n_XT60"
+			(at 43.18 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 43.18 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C428722"
+			(at 43.18 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "72a0cecb-ac33-40b0-b924-e7a9047c7568")
+		)
+		(pin "1"
+			(uuid "3bcc4d62-2a65-47ef-8071-74e7160315a2")
+		)
+		(pin "3"
+			(uuid "360e48b3-6bc3-49ec-a03a-7cb5abf7e3c2")
+		)
+		(pin "4"
+			(uuid "ab6cf4e6-178e-4d07-83fc-6299638380d0")
+		)
+		(instances
+			(project ""
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 30.48 78.105 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "65c24cee-6879-4f9e-92e8-3940a0adc4ad")
+		(property "Reference" "#PWR01"
+			(at 30.48 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 30.48 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 30.48 78.105 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "843a16d3-def6-4123-b5c4-c5d94f7dd931")
+		)
+		(instances
+			(project ""
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 30.48 73.025 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e608027a-6215-490d-9cfe-a7622c311a08")
+		(property "Reference" "#PWR03"
+			(at 30.48 76.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+28V"
+			(at 30.226 68.961 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 30.48 73.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "94896491-52b7-4f7f-be59-98086761b12e")
+		)
+		(instances
+			(project ""
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 62.23 69.215)
+		(size 22.86 12.065)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "31ac8560-d214-4457-8fb9-ea1b08afb3dc")
+		(property "Sheetname" "Logic Power Subsystem"
+			(at 62.23 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 62.23 98.3746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 106.68 95.885)
+		(size 26.035 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "31cd0c81-16e1-4561-a3f3-7cdd0c652c38")
+		(property "Sheetname" "Nvidia Jetson Orin AGX"
+			(at 106.68 95.1734 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "jbreakout.kicad_sch"
+			(at 106.68 105.3596 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 106.68 125.73)
+		(size 26.035 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a8c0daca-8775-4589-8966-a2a951640341")
+		(property "Sheetname" "On-Board Sensors"
+			(at 106.68 125.0184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensors.kicad_sch"
+			(at 106.68 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 106.68 110.49)
+		(size 26.035 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "acdd7974-e298-4e3c-8b62-c874dfff5426")
+		(property "Sheetname" "Rover Subsystems"
+			(at 106.68 109.7784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "subs.kicad_sch"
+			(at 106.68 119.9646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 67.31 46.355)
+		(size 26.035 9.525)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ecd2c899-b748-4a46-89b6-53cd1ef0a98c")
+		(property "Sheetname" "Raspberry Pi 4 B"
+			(at 71.247 51.562 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "rp4b.kicad_sch"
+			(at 67.31 56.4646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 106.68 81.28)
+		(size 26.035 9.525)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fc039186-3e27-44d7-89ab-474fb9cf9f12")
+		(property "Sheetname" "5 Port Ethernet Switch"
+			(at 106.68 80.5684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "switch.kicad_sch"
+			(at 106.68 91.3896 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
