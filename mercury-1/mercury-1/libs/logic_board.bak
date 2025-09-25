@@ -12,6 +12,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "LT8612IUDE#PBF"
@@ -20,6 +21,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "logic_board:QFN-28_L6.0-W3.0-P0.50-BL-EP"
@@ -60,8 +62,8 @@
 		)
 		(symbol "LT8612IUDE#PBF_0_1"
 			(rectangle
-				(start -12.7 20.32)
-				(end 10.16 -20.32)
+				(start -11.43 19.05)
+				(end 11.43 -19.05)
 				(stroke
 					(width 0)
 					(type default)
@@ -71,7 +73,7 @@
 				)
 			)
 			(circle
-				(center -11.43 19.05)
+				(center -9.652 17.018)
 				(radius 0.38)
 				(stroke
 					(width 0)
@@ -81,80 +83,10 @@
 					(type none)
 				)
 			)
-			(pin unspecified line
-				(at -15.24 15.24 0)
-				(length 2.54)
-				(name "SYNC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 12.7 0)
-				(length 2.54)
-				(name "TR/SS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 10.16 0)
-				(length 2.54)
-				(name "RT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 7.62 0)
-				(length 2.54)
-				(name "EN/UV"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 5.08 0)
+		)
+		(symbol "LT8612IUDE#PBF_1_1"
+			(pin passive line
+				(at -13.97 13.97 0)
 				(length 2.54)
 				(name "VIN"
 					(effects
@@ -171,17 +103,17 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at -15.24 2.54 0)
+			(pin passive line
+				(at -13.97 5.08 0)
 				(length 2.54)
-				(name "VIN"
+				(name "EN/UV"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "6"
+				(number "4"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -189,17 +121,17 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at -15.24 0 0)
+			(pin passive line
+				(at -13.97 -5.08 0)
 				(length 2.54)
-				(name "VIN"
+				(name "SYNC"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "7"
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -207,8 +139,44 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at -15.24 -2.54 0)
+			(pin passive line
+				(at -13.97 -7.62 0)
+				(length 2.54)
+				(name "TR/SS"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -13.97 -10.16 0)
+				(length 2.54)
+				(name "RT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -1.27 -21.59 90)
 				(length 2.54)
 				(name "PGND"
 					(effects
@@ -225,44 +193,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at -15.24 -5.08 0)
-				(length 2.54)
-				(name "PGND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 -7.62 0)
-				(length 2.54)
-				(name "PGND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 -10.16 0)
+			(pin passive line
+				(at 1.27 -21.59 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -279,134 +211,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at -15.24 -12.7 0)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 -15.24 0)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at -15.24 -17.78 0)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "14"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at 12.7 17.78 180)
-				(length 2.54)
-				(name "GND"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "29"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at 12.7 15.24 180)
-				(length 2.54)
-				(name "NC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "28"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at 12.7 12.7 180)
-				(length 2.54)
-				(name "NC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "27"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at 12.7 10.16 180)
-				(length 2.54)
-				(name "NC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "26"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin unspecified line
-				(at 12.7 7.62 180)
+			(pin passive line
+				(at 3.81 -21.59 90)
 				(length 2.54)
 				(name "NC"
 					(effects
@@ -423,8 +229,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 5.08 180)
+			(pin passive line
+				(at 13.97 15.24 180)
 				(length 2.54)
 				(name "FB"
 					(effects
@@ -441,8 +247,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 2.54 180)
+			(pin passive line
+				(at 13.97 8.89 180)
 				(length 2.54)
 				(name "PG"
 					(effects
@@ -459,8 +265,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 0 180)
+			(pin passive line
+				(at 13.97 5.08 180)
 				(length 2.54)
 				(name "BIAS"
 					(effects
@@ -477,8 +283,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -2.54 180)
+			(pin passive line
+				(at 13.97 1.27 180)
 				(length 2.54)
 				(name "INTVCC"
 					(effects
@@ -495,8 +301,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -5.08 180)
+			(pin passive line
+				(at 13.97 -2.54 180)
 				(length 2.54)
 				(name "BST"
 					(effects
@@ -513,8 +319,8 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -7.62 180)
+			(pin passive line
+				(at 13.97 -10.16 180)
 				(length 2.54)
 				(name "SW"
 					(effects
@@ -523,7 +329,7 @@
 						)
 					)
 				)
-				(number "19"
+				(number "15"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -531,28 +337,96 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -10.16 180)
-				(length 2.54)
-				(name "SW"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "TPS1HA08AQPWPRQ1"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(number "18"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
+				(hide yes)
+			)
+		)
+		(property "Value" "TPS1HA08AQPWPRQ1"
+			(at 0 -15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "logic_board:HTSSOP-16_L5.0-W4.4-P0.65-LS6.4-BL-EP"
+			(at 0 -17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C3230076"
+			(at 0 -20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "TPS1HA08AQPWPRQ1_0_1"
+			(rectangle
+				(start -11.43 12.7)
+				(end 11.43 -12.7)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -12.7 180)
+			(circle
+				(center -10.16 7.62)
+				(radius 0.38)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "TPS1HA08AQPWPRQ1_1_1"
+			(pin passive line
+				(at -13.97 6.35 0)
 				(length 2.54)
-				(name "SW"
+				(name "VBB"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -567,10 +441,100 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -15.24 180)
+			(pin passive line
+				(at -13.97 3.81 0)
 				(length 2.54)
-				(name "SW"
+				(name "EN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -13.97 -1.27 0)
+				(length 2.54)
+				(name "SNS"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -13.97 -3.81 0)
+				(length 2.54)
+				(name "LATCH"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -13.97 -6.35 0)
+				(length 2.54)
+				(name "~{ST}"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 13.97 7.62 180)
+				(length 2.54)
+				(name "VOUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 13.97 2.54 180)
+				(length 2.54)
+				(name "DIA_EN"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -585,10 +549,10 @@
 					)
 				)
 			)
-			(pin unspecified line
-				(at 12.7 -17.78 180)
+			(pin passive line
+				(at 13.97 0 180)
 				(length 2.54)
-				(name "SW"
+				(name "SEL2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -596,6 +560,185 @@
 					)
 				)
 				(number "15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 13.97 -2.54 180)
+				(length 2.54)
+				(name "SEL1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 13.97 -5.08 180)
+				(length 2.54)
+				(name "NC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 13.97 -7.62 180)
+				(length 2.54)
+				(name "NC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 13.97 -10.16 180)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "WJ500V-5.08-2P-14-00A"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "P"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WJ500V-5.08-2P-14-00A"
+			(at 0 -10.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Stuff:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
+			(at 0 -12.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
+			(at 0 -15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C8465"
+			(at 0 -17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "WJ500V-5.08-2P-14-00A_0_1"
+			(rectangle
+				(start -3.81 5.08)
+				(end 3.81 0)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin unspecified line
+				(at -1.27 -5.08 90)
+				(length 5.08)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin unspecified line
+				(at 1.27 -5.08 90)
+				(length 5.08)
+				(name "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
 					(effects
 						(font
 							(size 1.27 1.27)
