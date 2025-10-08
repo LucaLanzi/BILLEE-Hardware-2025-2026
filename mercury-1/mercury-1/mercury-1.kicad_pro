@@ -628,11 +628,11 @@
     ],
     [
       "a8c0daca-8775-4589-8966-a2a951640341",
-      "On-Board Sensors"
+      "Sensors and Serial Multiplexers"
     ],
     [
       "31ac8560-d214-4457-8fb9-ea1b08afb3dc",
-      "Logic Power Subsystem"
+      "Power Subsystems"
     ],
     [
       "ecd2c899-b748-4a46-89b6-53cd1ef0a98c",
@@ -640,7 +640,11 @@
     ],
     [
       "acdd7974-e298-4e3c-8b62-c874dfff5426",
-      "Rover Subsystems"
+      "Science Subsystem"
+    ],
+    [
+      "176c9ae3-d000-4e8d-ad8b-683eb9fea453",
+      "Arm Subsystem"
     ]
   ],
   "text_variables": {}

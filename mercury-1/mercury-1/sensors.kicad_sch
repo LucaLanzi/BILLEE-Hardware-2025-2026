@@ -4,5 +4,8 @@
 	(generator_version "9.0")
 	(uuid "fd898aae-0174-46b9-bcbc-5e0a4d11c789")
 	(paper "A4")
+	(title_block
+		(company "BILLEE Rover")
+	)
 	(lib_symbols)
 )

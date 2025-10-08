@@ -4,6 +4,9 @@
 	(generator_version "9.0")
 	(uuid "0e694d7a-d6f5-4b37-a0ac-8d77b37f2800")
 	(paper "A4")
+	(title_block
+		(company "BILLEE Rover")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
@@ -2027,6 +2030,26 @@
 			(justify left top)
 		)
 		(uuid "3db1d084-b566-4821-9441-f498358175cd")
+	)
+	(text_box "This power subsystem needs to be able to power sequence the following from their respective batteries.\nArm/Science can share the same battery pack -> Must use a relay triggered by the OBC. GPIO/Serial breakout for Arm. Repurpose for Science.\nComms/RF can use a load switch + switching regulator and draw power from the Logic board depending on the power requirements.\nEthernet Switch can use a load switch + switching regulator and draw power from the Logic Board depending on the power requirements.\nJetson can use load switch + switching regulator and draw power from teh Logic Board depending on the power draw."
+		(exclude_from_sim no)
+		(at 204.216 139.192 0)
+		(size 79.756 25.146)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a1d6344c-1566-4ed9-a259-848c5ca7bfda")
 	)
 	(junction
 		(at 117.602 28.194)
