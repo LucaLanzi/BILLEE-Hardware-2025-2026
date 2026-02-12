@@ -3697,191 +3697,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "logic_board:CN-PA36-38244500-G369"
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "M"
-				(at 2.54 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "CN-PA36-38244500-G369"
-				(at 2.54 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 -2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.omc-stepperonline.com/brushed-24v-dc-gear-motor-30kg-cm-8-9rpm-w-369-1-planetary-gearbox-pa36-38244500-g369"
-				(at 0 -2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "CN-PA36-38244500-G369"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "DC Motor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "PinHeader*P2.54mm* TerminalBlock*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "CN-PA36-38244500-G369_0_0"
-				(polyline
-					(pts
-						(xy -1.27 -3.302) (xy -1.27 0.508) (xy 0 -2.032) (xy 1.27 0.508) (xy 1.27 -3.302)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "CN-PA36-38244500-G369_0_1"
-				(polyline
-					(pts
-						(xy 0 2.032) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.7272) (xy 0 2.0828)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 -1.524)
-					(radius 3.2512)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -4.7752) (xy 0 -5.1816)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -7.62) (xy 0 -7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "CN-PA36-38244500-G369_1_1"
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "logic_board:CircuitBreaker_1P"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -10563,6 +10378,26 @@
 		)
 		(uuid "da17204d-3829-4d47-aa54-538aae1ef210")
 	)
+	(text_box "To yellowjacket encoder"
+		(exclude_from_sim no)
+		(at 184.15 283.845 0)
+		(size 13.97 8.128)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e607f03f-c112-4372-82c2-2b5815061246")
+	)
 	(text_box "Use this guide to wire using Pyserial"
 		(exclude_from_sim no)
 		(at 290.068 237.236 0)
@@ -10826,6 +10661,10 @@
 		(uuid "13b020cc-8127-492b-9fcf-d42f82a49df5")
 	)
 	(no_connect
+		(at 182.88 284.48)
+		(uuid "15fea5d6-6c0e-4c84-8564-002d92e1f72c")
+	)
+	(no_connect
 		(at 527.05 254)
 		(uuid "19d616b2-b685-4917-9907-25d923275c30")
 	)
@@ -10982,6 +10821,10 @@
 		(uuid "64a58a64-bffc-43a5-a591-5b9741748fff")
 	)
 	(no_connect
+		(at 182.88 289.56)
+		(uuid "67697250-f618-423b-9add-3e90281ffc06")
+	)
+	(no_connect
 		(at 496.57 212.09)
 		(uuid "67876365-3196-4438-8bcc-0946d1972e66")
 	)
@@ -11048,6 +10891,10 @@
 	(no_connect
 		(at 34.925 309.88)
 		(uuid "8a033863-8150-4f1f-abf2-0c4d9f39e804")
+	)
+	(no_connect
+		(at 182.88 292.1)
+		(uuid "8a958a29-a94f-4403-80ff-b7db5d7491dc")
 	)
 	(no_connect
 		(at 73.025 294.64)
@@ -11577,16 +11424,6 @@
 		)
 		(uuid "0c43e604-817f-4c55-bb71-0b3e9cb79704")
 	)
-	(wire
-		(pts
-			(xy 182.88 292.1) (xy 186.69 292.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c6f2225-823f-462f-b6c2-57da30383183")
-	)
 	(polyline
 		(pts
 			(xy 34.29 314.325) (xy 35.56 315.595)
@@ -12079,16 +11916,6 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 289.56) (xy 185.42 289.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c2e3c7f-9855-4ef1-a62d-34b7a4ec2215")
-	)
-	(wire
-		(pts
 			(xy 50.8 379.73) (xy 66.04 379.73)
 		)
 		(stroke
@@ -12116,16 +11943,6 @@
 			(type default)
 		)
 		(uuid "2ec176df-b9ca-41e1-9bf7-5f8a23c6d97b")
-	)
-	(wire
-		(pts
-			(xy 185.42 281.94) (xy 196.85 281.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f93a57e-303e-499e-ab61-58a39566e416")
 	)
 	(wire
 		(pts
@@ -12546,16 +12363,6 @@
 			(type default)
 		)
 		(uuid "495deafc-97ab-4ff3-86b0-da2aff4cf54d")
-	)
-	(wire
-		(pts
-			(xy 194.31 292.1) (xy 196.85 292.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b61a644-9e2d-449e-8628-be4159c0d479")
 	)
 	(wire
 		(pts
@@ -13639,26 +13446,6 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 288.29) (xy 190.5 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1eae51c-8573-4007-a226-dac72f4d18fe")
-	)
-	(wire
-		(pts
-			(xy 185.42 281.94) (xy 185.42 289.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2ad4f50-ff3c-4447-8e42-5ab6d940b436")
-	)
-	(wire
-		(pts
 			(xy 393.7 30.48) (xy 393.7 33.02)
 		)
 		(stroke
@@ -13869,16 +13656,6 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 284.48) (xy 182.88 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0c3ef0b-80f6-4963-9526-cf7e47ae00bb")
-	)
-	(wire
-		(pts
 			(xy 251.46 269.24) (xy 251.46 276.86)
 		)
 		(stroke
@@ -14016,16 +13793,6 @@
 			(type default)
 		)
 		(uuid "bdcff4ca-ba0b-4705-811d-7db1a71fa474")
-	)
-	(wire
-		(pts
-			(xy 196.85 281.94) (xy 196.85 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be817139-07a1-4e07-9770-d52c77ff96ff")
 	)
 	(wire
 		(pts
@@ -25909,6 +25676,75 @@
 		)
 	)
 	(symbol
+		(lib_id "logic_board:Yellowjacket 5203")
+		(at 194.31 381 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "39150437-8c1e-4a89-aac6-1bca523d2611")
+		(property "Reference" "M4"
+			(at 199.39 382.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Yellowjacket 5203"
+			(at 187.198 390.144 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 383.286 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.gobilda.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/?srsltid=AfmBOop0hJPw3SFHkwtuK_eQ_aN3VPcP46iypOMregJbB3z72pbZtZjr"
+			(at 194.31 383.286 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Yellowjacket 5203"
+			(at 194.31 381 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "504c2e72-7d5a-4193-b3f3-53cd10b70cba")
+		)
+		(pin "2"
+			(uuid "e95cb30c-3852-4bbc-96e2-90c2079a3a2e")
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9"
+					(reference "M4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "logic_board:MAX6675_Breakout")
 		(at 285.75 176.53 0)
 		(unit 1)
@@ -26416,78 +26252,6 @@
 			(project "mercury-1"
 				(path "/1b548578-061f-412b-9a17-10125f836cd9"
 					(reference "#PWR043")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "logic_board:NP32HS")
-		(at 190.5 292.1 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "42a9e5ee-8171-4e68-a8d5-13f4a1d9d787")
-		(property "Reference" "U25"
-			(at 192.786 295.402 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5k (8mm Bore)"
-			(at 197.866 297.434 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 190.5 292.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://p3america.com/np32hs-series/?searchid=67683&search_query=RH24PC+Series+8mm"
-			(at 190.5 291.846 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "5k (8mm Bore)"
-			(at 190.5 292.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c065a55a-1705-4d2e-ac3b-28782d91f029")
-		)
-		(pin "1"
-			(uuid "77ee60a4-ddeb-4103-8ee6-487685422989")
-		)
-		(pin "3"
-			(uuid "e1b200ac-1b24-462d-bcfa-386ba48f2668")
-		)
-		(instances
-			(project ""
-				(path "/1b548578-061f-412b-9a17-10125f836cd9"
-					(reference "U25")
 					(unit 1)
 				)
 			)
@@ -31661,76 +31425,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 196.85 288.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9adb2cc3-c505-4934-b882-86625553aaa1")
-		(property "Reference" "R7"
-			(at 199.39 287.0199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2k"
-			(at 199.39 289.5599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 197.866 288.544 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 196.85 288.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 196.85 288.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e1a1af64-4a06-4366-bfda-f47de8924643")
-		)
-		(pin "1"
-			(uuid "47d98937-a90c-419a-997a-655b70e0860c")
-		)
-		(instances
-			(project ""
-				(path "/1b548578-061f-412b-9a17-10125f836cd9"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 250.19 331.47 0)
 		(unit 1)
@@ -33869,75 +33563,6 @@
 			(project "mercury-1"
 				(path "/1b548578-061f-412b-9a17-10125f836cd9"
 					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "logic_board:CN-PA36-38244500-G369")
-		(at 194.31 381 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dc4681ae-9f07-4124-b1cb-cb63a5ca25ec")
-		(property "Reference" "M4"
-			(at 199.39 382.2699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CN-PA36-38244500-G369"
-			(at 188.214 390.398 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.31 383.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.omc-stepperonline.com/brushed-24v-dc-gear-motor-30kg-cm-8-9rpm-w-369-1-planetary-gearbox-pa36-38244500-g369"
-			(at 194.31 383.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CN-PA36-38244500-G369"
-			(at 194.31 381 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8c7eb723-933a-415f-a218-d090110f192d")
-		)
-		(pin "2"
-			(uuid "493ea84e-62b8-43db-bddb-b5dba86f6e69")
-		)
-		(instances
-			(project ""
-				(path "/1b548578-061f-412b-9a17-10125f836cd9"
-					(reference "M4")
 					(unit 1)
 				)
 			)
