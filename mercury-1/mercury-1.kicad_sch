@@ -10773,18 +10773,6 @@
 		(uuid 24750dd3-76c6-4114-be93-563dc922e17f)
 	)
 	(rectangle
-		(start 426.72 13.97)
-		(end 581.66 138.43)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 40983d73-1003-4a78-bcc6-d2affe0b060d)
-	)
-	(rectangle
 		(start 235.585 264.795)
 		(end 327.787 358.14)
 		(stroke
@@ -10927,16 +10915,6 @@
 			(type none)
 		)
 		(uuid ed86cb65-8ed5-4c04-9388-02ffd78e5e84)
-	)
-	(text "Science"
-		(exclude_from_sim no)
-		(at 430.784 15.494 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "028174a9-648b-4cd1-9418-d918af6ad4e7")
 	)
 	(text "To PI4B USB"
 		(exclude_from_sim no)
