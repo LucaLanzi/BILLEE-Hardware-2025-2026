@@ -27,8 +27,8 @@
         <mxCell id="et9wrS44kP7xOVmx8vv9-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Batteries" vertex="1">
           <mxGeometry height="60" width="120" x="380" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="et9wrS44kP7xOVmx8vv9-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="KSW" vertex="1">
-          <mxGeometry height="60" width="40" x="560" y="120" as="geometry" />
+        <mxCell id="et9wrS44kP7xOVmx8vv9-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kill Switch" vertex="1">
+          <mxGeometry height="60" width="90" x="560" y="120" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-23" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="et9wrS44kP7xOVmx8vv9-22">
           <mxGeometry relative="1" as="geometry" />
@@ -36,7 +36,7 @@
         <mxCell id="et9wrS44kP7xOVmx8vv9-32" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="et9wrS44kP7xOVmx8vv9-31">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="et9wrS44kP7xOVmx8vv9-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Arm/Science +14.4v" vertex="1">
+        <mxCell id="et9wrS44kP7xOVmx8vv9-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Arm/Science" vertex="1">
           <mxGeometry height="60" width="120" x="170" y="240" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-14" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
@@ -44,23 +44,29 @@
             <mxPoint x="439.7586206896551" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="et9wrS44kP7xOVmx8vv9-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Logic +22.2v" vertex="1">
+        <mxCell id="w8KTLPZF_DGY4AZjxN0s-2" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="w8KTLPZF_DGY4AZjxN0s-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="et9wrS44kP7xOVmx8vv9-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Logic" vertex="1">
           <mxGeometry height="60" width="120" x="380" y="240" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-13" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="et9wrS44kP7xOVmx8vv9-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Drivetrain" vertex="1">
-          <mxGeometry height="60" width="120" x="570" y="240" as="geometry" />
+          <mxGeometry height="60" width="120" x="660" y="240" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="NEO / ODESC Motor Array" vertex="1">
-          <mxGeometry height="60" width="120" x="570" y="360" as="geometry" />
+          <mxGeometry height="60" width="120" x="660" y="360" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-17" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="et9wrS44kP7xOVmx8vv9-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Jetson" vertex="1">
           <mxGeometry height="60" width="120" x="380" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="w8KTLPZF_DGY4AZjxN0s-4" edge="1" parent="1" source="et9wrS44kP7xOVmx8vv9-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="w8KTLPZF_DGY4AZjxN0s-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Raspberry Pi 4B" vertex="1">
           <mxGeometry height="60" width="120" x="380" y="440" as="geometry" />
@@ -70,6 +76,12 @@
         </mxCell>
         <mxCell id="et9wrS44kP7xOVmx8vv9-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Arm" vertex="1">
           <mxGeometry height="60" width="120" x="100" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="w8KTLPZF_DGY4AZjxN0s-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Comms" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="w8KTLPZF_DGY4AZjxN0s-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Sensors" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="520" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
