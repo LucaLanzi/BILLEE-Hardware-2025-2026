@@ -1,6 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
 #include <Servo.h>
+//test
 
 /*
   UNO-friendly design:
@@ -292,6 +293,49 @@ static void drillEnterState(DrillSeqState s) {
   }
 }
 
+// --------- NEW: robust command parsing helpers (servo fix) ----------
+static String lowerTrim(const String& in) {
+  String s = in;
+  s.trim();
+  s.toLowerCase();
+  return s;
+}
+
+// Splits "cmd arg..." into cmdWord and argString (argString may be "")
+static void splitCmd(const String& in, String& word, String& args) {
+  String s = in;
+  s.trim();
+
+  int sp = s.indexOf(' ');
+  if (sp < 0) {
+    word = s;
+    args = "";
+  } else {
+    word = s.substring(0, sp);
+    args = s.substring(sp + 1);
+    args.trim();
+  }
+}
+
+static bool parseFloatArg(const String& s, float& out) {
+  String t = s;
+  t.trim();
+  if (t.length() == 0) return false;
+
+  // Minimal validation: allow digits, sign, dot
+  bool hasDigit = false;
+  for (int i = 0; i < (int)t.length(); i++) {
+    char c = t[i];
+    if (isDigit(c)) hasDigit = true;
+    else if (c == '-' || c == '+' || c == '.') {}
+    else return false;
+  }
+  if (!hasDigit) return false;
+
+  out = t.toFloat();
+  return true;
+}
+
 // ========================= MENU PRINTS =========================
 static void printMainMenu() {
   Serial.println();
@@ -500,26 +544,68 @@ static void drillUpdateSequence() {
 static void servoGoTo(uint8_t idx, float deg) {
   if (deg < 0) deg = 0;
   if (deg > 180) deg = 180;
-  servos[idx].targetDeg = deg;
-  servos[idx].moving = true;
-  servos[idx].lastUpdateMs = millis();
-}
 
-static void handleServoControl(uint8_t idx, const String& cmd) {
-  if (cmd == "b") { menuState = MenuState::SERVO_MENU; printServoSelectMenu(); return; }
-  if (cmd.equalsIgnoreCase("f")) { servoGoTo(idx, 180); return; }
-  if (cmd.equalsIgnoreCase("r")) { servoGoTo(idx, 0); return; }
-  if (cmd.equalsIgnoreCase("stop")) { servos[idx].moving = false; return; }
-  if (cmd.equalsIgnoreCase("status")) { printServoControlMenu(idx); return; }
+  ServoState &s = servos[idx];
+  s.targetDeg = deg;
 
-  if (cmd.startsWith("goto ")) { servoGoTo(idx, cmd.substring(5).toFloat()); return; }
-  if (cmd.startsWith("speed ")) {
-    float spd = cmd.substring(6).toFloat();
-    if (spd <= 0) spd = 1;
-    servos[idx].speedDegPerSec = spd;
+  // If already basically there, don't start the mover
+  if (fabs(s.targetDeg - s.currentDeg) < 0.05f) {
+    s.moving = false;
+    writeServoDeg(idx, s.currentDeg);
     return;
   }
-  Serial.println(F("Unknown servo cmd"));
+
+  s.moving = true;
+  s.lastUpdateMs = millis();
+}
+
+static void handleServoControl(uint8_t idx, const String& cmdRaw) {
+  String word, args;
+  splitCmd(cmdRaw, word, args);
+  String w = lowerTrim(word);
+  String a = args; // already trimmed
+
+  if (w == "b") { menuState = MenuState::SERVO_MENU; printServoSelectMenu(); return; }
+  if (w == "f") { servoGoTo(idx, 180); return; }
+  if (w == "r") { servoGoTo(idx, 0); return; }
+
+  if (w == "stop") {
+    // Explicitly hold position
+    servos[idx].moving = false;
+    servos[idx].targetDeg = servos[idx].currentDeg;
+    Serial.println(F("OK: servo stopped (holding position)."));
+    return;
+  }
+
+  if (w == "status") {
+    ServoState &s = servos[idx];
+    Serial.print(F("cur=")); Serial.print(s.currentDeg, 1);
+    Serial.print(F(" tgt=")); Serial.print(s.targetDeg, 1);
+    Serial.print(F(" spd=")); Serial.print(s.speedDegPerSec, 1);
+    Serial.print(F(" moving=")); Serial.println(s.moving ? F("YES") : F("NO"));
+    return;
+  }
+
+  if (w == "goto") {
+    float deg;
+    if (!parseFloatArg(a, deg)) { Serial.println(F("ERR: usage: goto <deg>")); return; }
+    servoGoTo(idx, deg);
+    Serial.println(F("OK: goto accepted."));
+    return;
+  }
+
+  if (w == "speed") {
+    float spd;
+    if (!parseFloatArg(a, spd)) { Serial.println(F("ERR: usage: speed <deg/s>")); return; }
+    if (spd < 1.0f) spd = 1.0f;
+    servos[idx].speedDegPerSec = spd;
+    Serial.print(F("OK: speed set to "));
+    Serial.print(servos[idx].speedDegPerSec, 1);
+    Serial.println(F(" deg/s"));
+    return;
+  }
+
+  Serial.println(F("Unknown servo cmd. Use: f | r | stop | goto <deg> | speed <deg/s> | status | b"));
 }
 
 static int findRelayByName(const String& name) {
