@@ -97,6 +97,8 @@ enum class MenuState {
 #define DRILLMOD2_IN1  11
 #define DRILLMOD2_IN2  12
 #define DRILLMOD2_PWM  44
+#define DRILLMOD1_ESTOP 13
+#define DRILLMOD2_ESTOP 14
 #define RELAY_PIN_1    22
 #define RELAY_PIN_2    23
 #define RELAY_PIN_3    25
@@ -142,6 +144,9 @@ HBridge actuator  = { ActDir::STOP, 150, ACT_IN1,       ACT_IN2,       ACT_PWM  
 HBridge drill     = { ActDir::STOP, 150, DRILL_IN1,     DRILL_IN2,     DRILL_PWM     };
 HBridge drillMod1 = { ActDir::STOP, 255, DRILLMOD1_IN1, DRILLMOD1_IN2, DRILLMOD1_PWM };  // 255 default; lower with: speed <0-255>
 HBridge drillMod2 = { ActDir::STOP, 255, DRILLMOD2_IN1, DRILLMOD2_IN2, DRILLMOD2_PWM };  // 255 default; lower with: speed <0-255>
+
+bool drillMod1_estopPressed = false;
+bool drillMod2_estopPressed = false;
 
 MenuState menuState = MenuState::MAIN;
 int selectedRelay   = -1;
@@ -203,6 +208,42 @@ static void servo4WriteDeg(uint16_t deg) {
   if (deg > SERVO4_DEG_MAX) deg = SERVO4_DEG_MAX;
   servos[3].positionDeg = deg;
   pca.setPWM(servos[3].channel, 0, usToTicks(servo4DegToUs(deg)));
+}
+
+// ======================= E-STOP HELPERS =======================
+static void updateEStops() {
+  drillMod1_estopPressed = (digitalRead(DRILLMOD1_ESTOP) == LOW);
+  drillMod2_estopPressed = (digitalRead(DRILLMOD2_ESTOP) == LOW);
+}
+
+static void enforceEStopLimits() {
+  // Drill Module 1: stop if E-stop active and forward
+  if (drillMod1_estopPressed && drillMod1.dir == ActDir::FWD) {
+    drillMod1.dir = ActDir::STOP;
+    hbridgeApply(drillMod1);
+  }
+  
+  // Drill Module 2: stop if E-stop active and forward
+  if (drillMod2_estopPressed && drillMod2.dir == ActDir::FWD) {
+    drillMod2.dir = ActDir::STOP;
+    hbridgeApply(drillMod2);
+  }
+}
+
+static bool isDrillMod1EStopActive() {
+  if (drillMod1_estopPressed) {
+    Serial.println(F("[E-STOP-1 ACTIVE] Forward motion blocked - only reverse/stop allowed"));
+    return true;
+  }
+  return false;
+}
+
+static bool isDrillMod2EStopActive() {
+  if (drillMod2_estopPressed) {
+    Serial.println(F("[E-STOP-2 ACTIVE] Forward motion blocked - only reverse/stop allowed"));
+    return true;
+  }
+  return false;
 }
 
 // ======================= H-BRIDGE HELPERS =======================
@@ -332,6 +373,18 @@ static void printHBridgeMenu(const char* label) {
   Serial.println(F("b             back"));
 }
 
+static void printDrillMod1Status() {
+  printHBridgeStatus("DRILL MODULE 1", drillMod1);
+  Serial.print(F("  E-STOP-1: "));
+  Serial.println(drillMod1_estopPressed ? F("[ACTIVE]") : F("(inactive)"));
+}
+
+static void printDrillMod2Status() {
+  printHBridgeStatus("DRILL MODULE 2", drillMod2);
+  Serial.print(F("  E-STOP-2: "));
+  Serial.println(drillMod2_estopPressed ? F("[ACTIVE]") : F("(inactive)"));
+}
+
 static void printServoSelectMenu() {
   Serial.println(F("\n=== SERVO MENU ==="));
   Serial.println(F("1) Servo 1  (continuous rotation)"));
@@ -413,19 +466,19 @@ static void handleDrillModSelect(const String& cmd) {
   if (cmd == "b") { menuState = MenuState::MAIN; printMainMenu(); return; }
   if (cmd == "1") {
     menuState = MenuState::DRILLMOD1_MENU;
-    printHBridgeMenu("DRILL MODULE 1"); printHBridgeStatus("DRILL MODULE 1", drillMod1); return;
+    printHBridgeMenu("DRILL MODULE 1"); printDrillMod1Status(); return;
   }
   if (cmd == "2") {
     menuState = MenuState::DRILLMOD2_MENU;
-    printHBridgeMenu("DRILL MODULE 2"); printHBridgeStatus("DRILL MODULE 2", drillMod2); return;
+    printHBridgeMenu("DRILL MODULE 2"); printDrillMod2Status(); return;
   }
   if (cmd == "3") {
     menuState = MenuState::DRILLMOD_COMBINED;
     Serial.println(F("\n=== DRILL MODULES COMBINED ==="));
     Serial.println(F("Commands apply to BOTH Module 1 and Module 2 simultaneously."));
     Serial.println(F("f | r | stop | speed <0-255> | status | b"));
-    printHBridgeStatus("DRILL MODULE 1", drillMod1);
-    printHBridgeStatus("DRILL MODULE 2", drillMod2);
+    printDrillMod1Status();
+    printDrillMod2Status();
     return;
   }
   Serial.println(F("Pick 1/2/3 or b"));
@@ -588,23 +641,48 @@ static void handleDrillMenu(const String& cmd) {
 
 static void handleDrillMod1Menu(const String& cmd) {
   if (cmd == "b") { menuState = MenuState::DRILLMOD_SELECT; printDrillModSelectMenu(); return; }
+  
+  // Block forward command if E-stop is active
+  if (cmd.equalsIgnoreCase("f")) {
+    if (isDrillMod1EStopActive()) return;
+  }
+  
+  if (cmd.equalsIgnoreCase("status")) { printDrillMod1Status(); return; }
+  
   if (!handleHBridge(drillMod1, "DRILL MODULE 1", cmd))
     Serial.println(F("f | r | stop | speed <0-255> | status | b"));
 }
 
 static void handleDrillMod2Menu(const String& cmd) {
   if (cmd == "b") { menuState = MenuState::DRILLMOD_SELECT; printDrillModSelectMenu(); return; }
+  
+  // Block forward command if E-stop is active
+  if (cmd.equalsIgnoreCase("f")) {
+    if (isDrillMod2EStopActive()) return;
+  }
+  
+  if (cmd.equalsIgnoreCase("status")) { printDrillMod2Status(); return; }
+  
   if (!handleHBridge(drillMod2, "DRILL MODULE 2", cmd))
     Serial.println(F("f | r | stop | speed <0-255> | status | b"));
 }
 
 static void handleDrillModCombined(const String& cmd) {
   if (cmd == "b") { menuState = MenuState::DRILLMOD_SELECT; printDrillModSelectMenu(); return; }
+  
   if (cmd.equalsIgnoreCase("status")) {
-    printHBridgeStatus("DRILL MODULE 1", drillMod1);
-    printHBridgeStatus("DRILL MODULE 2", drillMod2);
+    printDrillMod1Status();
+    printDrillMod2Status();
     return;
   }
+  
+  // Block forward command if EITHER E-stop is active
+  if (cmd.equalsIgnoreCase("f")) {
+    bool estop1 = isDrillMod1EStopActive();
+    bool estop2 = isDrillMod2EStopActive();
+    if (estop1 || estop2) return;
+  }
+  
   bool ok1 = handleHBridge(drillMod1, "DRILL MODULE 1", cmd);
   bool ok2 = handleHBridge(drillMod2, "DRILL MODULE 2", cmd);
   if (!ok1 && !ok2)
@@ -659,18 +737,24 @@ void setup() {
   hbridgeInit(drillMod1);
   hbridgeInit(drillMod2);
 
+  pinMode(DRILLMOD1_ESTOP, INPUT_PULLUP);
+  pinMode(DRILLMOD2_ESTOP, INPUT_PULLUP);
+
   Serial.println(F("\n=== System Ready (Elegoo MEGA 2560) ==="));
   Serial.println(F("PCA9685 ch0-2   : continuous-rotation servos (I2C: D20 SDA, D21 SCL)"));
   Serial.println(F("PCA9685 ch3     : 300-degree positional servo"));
   Serial.println(F("Relays          : D22-D26"));
   Serial.println(F("Linear Actuator : D2(IN1) D3(IN2) D4(PWM)"));
   Serial.println(F("Drill           : D5(IN1) D6(IN2) D7(PWM)"));
-  Serial.println(F("Drill Module 1  : D8(IN1) D9(IN2) D10(PWM)"));
-  Serial.println(F("Drill Module 2  : D11(IN1) D12(IN2) D44(PWM)"));
+  Serial.println(F("Drill Module 1  : D8(IN1) D9(IN2) D10(PWM) | E-STOP: D13"));
+  Serial.println(F("Drill Module 2  : D11(IN1) D12(IN2) D44(PWM) | E-STOP: D14"));
   printMainMenu();
 }
 
 void loop() {
+  updateEStops();
+  enforceEStopLimits();
+  
   String cmd = readLineNonBlocking();
   if (cmd.length() == 0) return;
 

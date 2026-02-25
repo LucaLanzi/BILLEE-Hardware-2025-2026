@@ -10628,6 +10628,16 @@
 		)
 		(uuid "88fbdc61-6728-427e-95eb-671868c02048")
 	)
+	(text "Science"
+		(exclude_from_sim no)
+		(at 501.65 75.565 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "a071760b-add4-4a7a-afb0-50e8911917d6")
+	)
 	(text "Logic +22.2v\n"
 		(exclude_from_sim no)
 		(at 20.32 16.51 0)

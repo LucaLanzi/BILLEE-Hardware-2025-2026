@@ -894,6 +894,191 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_Nidec_CAS-120A1"
+			(pin_names
+				(offset 1)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 4.318 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_Nidec_CAS-120A1"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.nidec-components.com/e/catalog/switch/cas.pdf"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Switch, single pole double throw"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch single-pole double-throw spdt ON-ON"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*Nidec?Copal?CAS?120A*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Nidec_CAS-120A1_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.651 0.254) (xy 1.651 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.4572)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_Nidec_CAS-120A1_1_1"
+				(rectangle
+					(start -3.175 3.81)
+					(end 3.175 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "logic_board:Buck Converter"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4548,12 +4733,6 @@
 		(uuid "6557ca83-d76f-4da5-9fed-3b9ec5623cc7")
 	)
 	(junction
-		(at 223.52 36.83)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "789fc9a4-d0cb-469a-95a7-69f76303e0d6")
-	)
-	(junction
 		(at 201.93 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4576,6 +4755,14 @@
 		(uuid "00e945c4-ec1c-4285-8f20-41c1b0f6b6ef")
 	)
 	(no_connect
+		(at 102.87 175.26)
+		(uuid "0143e868-1375-4cf9-8f9b-bf8b7da02850")
+	)
+	(no_connect
+		(at 102.87 172.72)
+		(uuid "07deee59-9ddb-46ae-a5af-448663aeb229")
+	)
+	(no_connect
 		(at 36.83 177.8)
 		(uuid "0a14ffbc-4d28-40f4-aedd-127375c25763")
 	)
@@ -4592,8 +4779,28 @@
 		(uuid "11c93746-d3af-4483-8511-e0aa88298d09")
 	)
 	(no_connect
+		(at 102.87 160.02)
+		(uuid "14b29a55-9415-48b0-9c1d-404798f5437b")
+	)
+	(no_connect
 		(at 236.22 69.85)
 		(uuid "1532f5b0-a239-49b4-bc0b-11bb41d62ead")
+	)
+	(no_connect
+		(at 102.87 134.62)
+		(uuid "1690db34-40fd-4f16-bb34-8a8192a9b32d")
+	)
+	(no_connect
+		(at 102.87 182.88)
+		(uuid "1b3bea61-1977-41f4-a9ca-519e0f7dbc1e")
+	)
+	(no_connect
+		(at 102.87 157.48)
+		(uuid "1dc43955-2223-4726-8b05-fa587c935e9f")
+	)
+	(no_connect
+		(at 102.87 147.32)
+		(uuid "208ced21-1b5a-4b4c-9f84-265bc9079c14")
 	)
 	(no_connect
 		(at 236.22 64.77)
@@ -4612,8 +4819,8 @@
 		(uuid "33cc89ef-4a99-4e69-9567-c66bed4cbd37")
 	)
 	(no_connect
-		(at 36.83 93.98)
-		(uuid "39743bcd-bb94-4104-9d97-eb4c68835fc1")
+		(at 102.87 127)
+		(uuid "3ae0d43c-1267-4194-9f3f-9ef5d9b7e0de")
 	)
 	(no_connect
 		(at 36.83 91.44)
@@ -4624,12 +4831,20 @@
 		(uuid "42a9a592-07c1-4ce3-add9-393f31919ece")
 	)
 	(no_connect
+		(at 102.87 124.46)
+		(uuid "47afbb91-46aa-47f7-b499-a9d69bb86660")
+	)
+	(no_connect
 		(at 36.83 121.92)
 		(uuid "47b91ba3-fa3e-45b7-b2ab-7a858a29e00a")
 	)
 	(no_connect
 		(at 36.83 137.16)
 		(uuid "4ad45fc1-7a0e-4b49-bea4-ac092b2b638f")
+	)
+	(no_connect
+		(at 102.87 132.08)
+		(uuid "4f11e992-31f6-4290-9df1-a7fe31b4d9a8")
 	)
 	(no_connect
 		(at 36.83 139.7)
@@ -4644,8 +4859,16 @@
 		(uuid "5678987a-541a-4831-ba77-da261710280a")
 	)
 	(no_connect
+		(at 131.445 186.69)
+		(uuid "575605cd-731f-46fc-9ff5-e0408be89541")
+	)
+	(no_connect
 		(at 210.82 62.23)
 		(uuid "5c1fb5fe-8f36-4d8e-9023-53036a4c4046")
+	)
+	(no_connect
+		(at 102.87 185.42)
+		(uuid "5dd07085-a501-4182-bdac-84efd220b8c8")
 	)
 	(no_connect
 		(at 81.28 25.4)
@@ -4672,12 +4895,20 @@
 		(uuid "70f8a167-1015-4a59-846d-d66b5b140380")
 	)
 	(no_connect
+		(at 36.83 172.72)
+		(uuid "720c701d-d447-422d-a6d3-b029a2cca1fc")
+	)
+	(no_connect
 		(at 236.22 62.23)
 		(uuid "72481ea6-c298-41ea-833b-8dc81bceed89")
 	)
 	(no_connect
 		(at 210.82 67.31)
 		(uuid "730351bc-d9fc-49c9-97aa-463ed8f52d4e")
+	)
+	(no_connect
+		(at 102.87 121.92)
+		(uuid "7444b793-356a-4f9e-b880-1be8b4876645")
 	)
 	(no_connect
 		(at 36.83 119.38)
@@ -4712,6 +4943,18 @@
 		(uuid "8585d110-b0ae-4bcd-b651-43e4272ef2cf")
 	)
 	(no_connect
+		(at 102.87 149.86)
+		(uuid "86326730-7893-4b02-8c55-573a81da9e68")
+	)
+	(no_connect
+		(at 102.87 129.54)
+		(uuid "8b032247-9ac6-4ab8-b3cf-ba0cdb29f6b2")
+	)
+	(no_connect
+		(at 102.87 180.34)
+		(uuid "8ce005a8-6f64-4eea-919c-7793cdaf4f59")
+	)
+	(no_connect
 		(at 36.83 129.54)
 		(uuid "8d87bc10-29e4-4a08-9597-08751a0b9178")
 	)
@@ -4736,6 +4979,14 @@
 		(uuid "9a814e13-d1f6-4493-bfb1-f4eb6eb99d11")
 	)
 	(no_connect
+		(at 102.87 137.16)
+		(uuid "a2bad73f-8a7f-4205-b87d-78d3693b2762")
+	)
+	(no_connect
+		(at 102.87 177.8)
+		(uuid "a2d10a8f-5a51-47c4-80f5-9b23ab7cdfd8")
+	)
+	(no_connect
 		(at 36.83 76.2)
 		(uuid "a7cfcc6a-e167-4a3b-bfac-188b03407126")
 	)
@@ -4744,8 +4995,16 @@
 		(uuid "aa94148c-9349-4ffb-9f2c-af4754610205")
 	)
 	(no_connect
+		(at 102.87 167.64)
+		(uuid "b056d48b-e19e-458d-8707-e1e74298b30d")
+	)
+	(no_connect
 		(at 36.83 165.1)
 		(uuid "b0729157-0101-4a57-898f-554f8470de55")
+	)
+	(no_connect
+		(at 102.87 119.38)
+		(uuid "b4320543-6a82-45a5-af8f-e995dba6602d")
 	)
 	(no_connect
 		(at 36.83 142.24)
@@ -4784,16 +5043,40 @@
 		(uuid "c91d18b1-b494-47d6-98fa-80bfddb2588a")
 	)
 	(no_connect
+		(at 102.87 144.78)
+		(uuid "ca35501a-4926-49a7-bf58-f932aaa11031")
+	)
+	(no_connect
 		(at 210.82 52.07)
 		(uuid "cd719c0c-738d-4e49-b6a8-63cf8861c1a8")
+	)
+	(no_connect
+		(at 102.87 142.24)
+		(uuid "ced1f247-08ac-4c35-88d9-fc6796148dd8")
 	)
 	(no_connect
 		(at 68.58 64.77)
 		(uuid "d065f501-8190-4866-91ae-f4002413897c")
 	)
 	(no_connect
+		(at 102.87 165.1)
+		(uuid "d23ea8aa-8dfb-49c7-95d0-3ae76130c09b")
+	)
+	(no_connect
 		(at 151.13 45.72)
 		(uuid "d6dc6785-cbef-49c6-be30-87918d3a670b")
+	)
+	(no_connect
+		(at 102.87 152.4)
+		(uuid "d9d88f0f-bf7d-4834-be29-def53d323ca8")
+	)
+	(no_connect
+		(at 166.37 186.69)
+		(uuid "de964f64-ddd8-4653-9954-7b3a1a01ddd7")
+	)
+	(no_connect
+		(at 102.87 170.18)
+		(uuid "e7a4ef50-a8d9-4057-af98-85161b8f448c")
 	)
 	(no_connect
 		(at 151.13 27.94)
@@ -4804,12 +5087,20 @@
 		(uuid "ed7ae132-cd91-4b27-bb7c-41d6fc0c040a")
 	)
 	(no_connect
+		(at 102.87 154.94)
+		(uuid "ee525482-c523-44f8-aa9b-04a522eca0c5")
+	)
+	(no_connect
 		(at 151.13 80.01)
 		(uuid "f04148ed-8cf9-42ef-ac84-94f6095ab4f6")
 	)
 	(no_connect
 		(at 36.83 147.32)
 		(uuid "f170d12d-7733-419a-b30c-03f8f7c14703")
+	)
+	(no_connect
+		(at 102.87 139.7)
+		(uuid "f932a400-fbf8-43ad-b6b1-0a1699bbbcfc")
 	)
 	(no_connect
 		(at 36.83 127)
@@ -4828,16 +5119,6 @@
 			(type default)
 		)
 		(uuid "018a3ed0-ded9-4fb9-99c2-6b715480e37d")
-	)
-	(wire
-		(pts
-			(xy 223.52 36.83) (xy 227.33 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04544349-b12a-498f-9b29-4a0806685b82")
 	)
 	(wire
 		(pts
@@ -4948,6 +5229,16 @@
 			(type default)
 		)
 		(uuid "333cb7b0-16a5-4154-94e9-68795139ac53")
+	)
+	(wire
+		(pts
+			(xy 131.445 181.61) (xy 135.89 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35d0195a-ca1b-407b-acfa-7dccf35c0cf4")
 	)
 	(wire
 		(pts
@@ -5151,16 +5442,6 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 36.83) (xy 223.52 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4bbde02-a1ff-499a-8ddf-e3d87e03e1fc")
-	)
-	(wire
-		(pts
 			(xy 180.34 127) (xy 189.23 127)
 		)
 		(stroke
@@ -5228,6 +5509,16 @@
 			(type default)
 		)
 		(uuid "c19780b5-260a-47f7-ad07-35fcabfa7722")
+	)
+	(wire
+		(pts
+			(xy 166.37 181.61) (xy 170.815 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c524dab1-14be-4b0b-8dfa-400f8d02122b")
 	)
 	(wire
 		(pts
@@ -5381,7 +5672,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 34.29) (xy 245.11 44.45)
+			(xy 245.11 36.83) (xy 245.11 44.45)
 		)
 		(stroke
 			(width 0)
@@ -5398,6 +5689,16 @@
 			(type default)
 		)
 		(uuid "fbb91770-fac9-4d1f-9f0a-dac59fec5983")
+	)
+	(label "ardu_+5V"
+		(at 36.83 170.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "021edf1e-05a6-458f-a3e5-f9da1480218e")
 	)
 	(label "SCL"
 		(at 210.82 54.61 180)
@@ -5438,6 +5739,16 @@
 			(justify right bottom)
 		)
 		(uuid "1096c1fb-b520-4564-9404-a5f5993cd72e")
+	)
+	(label "ardu_+5V"
+		(at 219.71 36.83 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1adce9d6-2a08-49c5-a846-c170fdd84e3b")
 	)
 	(label "LinAct_IN3"
 		(at 222.25 149.86 180)
@@ -5569,6 +5880,26 @@
 		)
 		(uuid "6b52e6a4-6063-4f76-a85c-c4ecebb38503")
 	)
+	(label "e_stop_DrillM1"
+		(at 102.87 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "73f749be-ec7e-4f3b-9875-095b095ba42f")
+	)
+	(label "e_stop_DrillM2"
+		(at 156.21 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7b99f669-c896-4426-bf14-33caef688d09")
+	)
 	(label "pump3"
 		(at 130.81 60.96 180)
 		(effects
@@ -5699,6 +6030,16 @@
 		)
 		(uuid "b572a205-7acd-4eeb-9c1e-0c9d2552347c")
 	)
+	(label "e_stop_DrillM1"
+		(at 121.285 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b7d61caf-d6fb-43c5-aba3-33d5730d5d7e")
+	)
 	(label "DrillM1_IN1"
 		(at 152.4 137.16 180)
 		(effects
@@ -5828,6 +6169,16 @@
 			(justify right bottom)
 		)
 		(uuid "e2bda756-05f5-4b7f-9d40-5dc9190a064d")
+	)
+	(label "e_stop_DrillM2"
+		(at 36.83 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e4738c86-6bc7-4e05-baf7-f556ab35aeca")
 	)
 	(label "DrillM2_IN4"
 		(at 152.4 152.4 180)
@@ -6169,6 +6520,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Nidec_CAS-120A1")
+		(at 126.365 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "30c81889-b4b3-4821-93d3-40739af5b438")
+		(property "Reference" "SW2"
+			(at 126.365 175.895 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "E-Stop Drill Module 1"
+			(at 126.365 178.435 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
+			(at 126.365 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.nidec-components.com/e/catalog/switch/cas.pdf"
+			(at 126.365 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Switch, single pole double throw"
+			(at 126.365 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "107cbf74-e293-4c5b-b5cf-9548fa28a5c2")
+		)
+		(pin "2"
+			(uuid "638cc573-3a7f-45d8-a4b8-11ae312b2f0a")
+		)
+		(pin "3"
+			(uuid "78ec25dd-b9b8-480e-ad8b-f84e3a4937fc")
+		)
+		(instances
+			(project ""
+				(path "/1b548578-061f-412b-9a17-10125f836cd9/63b17e15-f75c-461c-a062-c88732366e9b"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 60.96 49.53 0)
 		(unit 1)
@@ -6301,6 +6723,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 135.89 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "378f3d5f-a3a2-4f3f-9919-39b48264a4ce")
+		(property "Reference" "#PWR0101"
+			(at 135.89 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 135.89 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3186781-4cf1-4a3e-b231-ac9c70977e96")
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9/63b17e15-f75c-461c-a062-c88732366e9b"
+					(reference "#PWR0101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 162.56 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6360,6 +6848,77 @@
 			(project "mercury-1"
 				(path "/1b548578-061f-412b-9a17-10125f836cd9/63b17e15-f75c-461c-a062-c88732366e9b"
 					(reference "#PWR089")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Nidec_CAS-120A1")
+		(at 161.29 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3d2f007a-d74f-40c7-b6cd-e377599be7d6")
+		(property "Reference" "SW3"
+			(at 161.29 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "E-Stop Drill Module 2"
+			(at 161.29 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
+			(at 161.29 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.nidec-components.com/e/catalog/switch/cas.pdf"
+			(at 161.29 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Switch, single pole double throw"
+			(at 161.29 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f81b7117-31b9-4e55-8bd4-a4080617d79b")
+		)
+		(pin "2"
+			(uuid "fbbd609f-22d0-416a-b624-44a40ddd3cd1")
+		)
+		(pin "3"
+			(uuid "67f27596-96df-41d2-9e05-c7bc16cd1683")
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9/63b17e15-f75c-461c-a062-c88732366e9b"
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -6838,6 +7397,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 170.815 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4baf9f01-456d-4aff-a86b-39c8e0833fd2")
+		(property "Reference" "#PWR0102"
+			(at 170.815 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 170.815 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.815 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.815 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 170.815 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "58c1ed74-7033-4d8b-85f1-9a5761de21e2")
+		)
+		(instances
+			(project "mercury-1"
+				(path "/1b548578-061f-412b-9a17-10125f836cd9/63b17e15-f75c-461c-a062-c88732366e9b"
+					(reference "#PWR0102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "logic_board:Logic_Relay")
 		(at 140.97 106.68 0)
 		(unit 1)
@@ -6918,7 +7543,7 @@
 	)
 	(symbol
 		(lib_id "power:+6V")
-		(at 223.52 36.83 0)
+		(at 227.33 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6927,7 +7552,7 @@
 		(fields_autoplaced yes)
 		(uuid "4d126908-1576-45dc-8e40-cf7552018740")
 		(property "Reference" "#PWR099"
-			(at 223.52 40.64 0)
+			(at 227.33 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6936,7 +7561,7 @@
 			)
 		)
 		(property "Value" "+6V"
-			(at 223.52 31.75 0)
+			(at 227.33 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6944,7 +7569,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 223.52 36.83 0)
+			(at 227.33 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6953,7 +7578,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 223.52 36.83 0)
+			(at 227.33 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6962,7 +7587,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+6V\""
-			(at 223.52 36.83 0)
+			(at 227.33 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8835,7 +9460,7 @@
 	)
 	(symbol
 		(lib_id "power:+6V")
-		(at 245.11 34.29 0)
+		(at 245.11 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8844,7 +9469,7 @@
 		(fields_autoplaced yes)
 		(uuid "bbd56dbe-486d-4d71-8be0-2ba147c94be2")
 		(property "Reference" "#PWR0100"
-			(at 245.11 38.1 0)
+			(at 245.11 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8853,7 +9478,7 @@
 			)
 		)
 		(property "Value" "+6V"
-			(at 245.11 29.21 0)
+			(at 245.11 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8861,7 +9486,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 245.11 34.29 0)
+			(at 245.11 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8870,7 +9495,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 245.11 34.29 0)
+			(at 245.11 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8879,7 +9504,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+6V\""
-			(at 245.11 34.29 0)
+			(at 245.11 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
