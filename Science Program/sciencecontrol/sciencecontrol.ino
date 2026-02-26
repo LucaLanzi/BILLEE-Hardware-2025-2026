@@ -17,22 +17,22 @@
   ├─────────────────┼──────────────────────────────────────┤
   │ Drill Module 1  │ D8 IN1, D9 IN2, D10 PWM~             │
   ├─────────────────┼──────────────────────────────────────┤
-  │ Drill Module 2  │ D11 IN1, D12 IN2, D44 PWM~           │
+  │ Drill Module 2  │ D11 IN1, D12 IN2, D44 PWM~           │  
   ├─────────────────┼──────────────────────────────────────┤
-  │ PCA9685 ch0-2   │ 360° continuous-rotation servos       │
-  │ PCA9685 ch3     │ 300° positional servo  ← Servo 4      │
+  │ PCA9685 ch0-1   │ 360° continuous-rotation servos       │
+  │ PCA9685 ch2     │ 300° positional servo  ← Servo 3      │
   └─────────────────┴──────────────────────────────────────┘
 
-  Continuous-rotation servo PWM model (servos 1-3):
+  Continuous-rotation servo PWM model (servos 1-2):
     1500 µs = STOP
     >1500   = forward  (faster toward 2000)
     <1500   = reverse  (faster toward 1000)
 
-  Positional servo PWM model (servo 4 — 300° range):
+  Positional servo PWM model (servo 3 — 300° range):
     500 µs  = 0°   (full CCW)
     2500 µs = 300° (full CW)
     1500 µs = 150° (centre)
-    Adjust SERVO4_US_MIN / SERVO4_US_MAX below if your
+    Adjust SERVO3_US_MIN / SERVO3_US_MAX below if your
     specific servo uses a different pulse range.
 
   All four H-bridges use the same control pattern:
@@ -47,11 +47,11 @@
 // ======================= TYPES =======================
 struct ServoState {
   uint8_t  channel;
-  // --- continuous-rotation fields (servos 1-3) ---
+  // --- continuous-rotation fields (servos 1-2) ---
   int8_t   direction;
   uint8_t  speedPct;
   int16_t  commandedPct;
-  // --- positional fields (servo 4) ---
+  // --- positional fields (servo 3) ---
   bool     isPositional;
   uint16_t positionDeg;   // current commanded position, 0-300
 };
@@ -74,7 +74,7 @@ struct HBridge {
 
 enum class MenuState {
   MAIN,
-  SERVO_MENU, SERVO_1, SERVO_2, SERVO_3, SERVO_4,
+  SERVO_MENU, SERVO_1, SERVO_2, SERVO_3,
   PUMPS_UV_MENU, PUMPS_UV_CONTROL,
   ACTUATOR_MENU,
   DRILL_MENU,
@@ -107,28 +107,27 @@ enum class MenuState {
 
 // ======================= PCA9685 SERVO CONSTANTS =======================
 
-// Continuous-rotation servos (ch 0-2)
+// Continuous-rotation servos (ch 0-1)
 static const uint16_t SERVO_US_STOP  = 1500;
 static const uint16_t SERVO_US_MAX   = 2000;
 static const uint16_t SERVO_US_MIN   = 1000;
 
-// Positional 300-degree servo (ch 3 / Servo 4)
+// Positional 300-degree servo (ch 2 / Servo 3)
 // Tune these to match your servo's datasheet if needed.
-static const uint16_t SERVO4_US_MIN  =  500;   // pulse at 0 degrees
-static const uint16_t SERVO4_US_MAX  = 2500;   // pulse at 300 degrees
-static const uint16_t SERVO4_DEG_MAX =  300;
+static const uint16_t SERVO3_US_MIN  =  500;   // pulse at 0 degrees
+static const uint16_t SERVO3_US_MAX  = 2500;   // pulse at 300 degrees
+static const uint16_t SERVO3_DEG_MAX =  300;
 
 static const uint16_t SERVO_PWM_FREQ = 50;
 
 // ======================= GLOBALS =======================
 Adafruit_PWMServoDriver pca = Adafruit_PWMServoDriver(0x40);
 
-ServoState servos[4] = {
+ServoState servos[3] = {
   //  ch  dir  spd  cmdPct  positional  posDeg
   {   0,   0,   50,   0,    false,      0 },  // Servo 1 — continuous
   {   1,   0,   50,   0,    false,      0 },  // Servo 2 — continuous
-  {   2,   0,   50,   0,    false,      0 },  // Servo 3 — continuous
-  {   3,   0,    0,   0,    true,     150 },  // Servo 4 — 300-degree positional (starts centred)
+  {   2,   0,    0,   0,    true,     150 },  // Servo 3 — 300-degree positional (starts centred)
 };
 
 Relay relays[] = {
@@ -159,7 +158,7 @@ static uint16_t usToTicks(uint16_t us) {
   return (uint16_t)t;
 }
 
-// ---- Continuous-rotation helpers (servos 1-3) ----
+// ---- Continuous-rotation helpers (servos 1-2) ----
 
 static uint16_t pctToServUs(int16_t pct) {
   if (pct >  100) pct =  100;
@@ -174,7 +173,7 @@ static uint16_t pctToServUs(int16_t pct) {
 }
 
 static void servoWritePct(uint8_t idx, int16_t pct) {
-  if (idx > 3 || servos[idx].isPositional) return;
+  if (idx > 2 || servos[idx].isPositional) return;
   if (pct >  100) pct =  100;
   if (pct < -100) pct = -100;
   servos[idx].commandedPct = pct;
@@ -196,18 +195,18 @@ static void servoStop(uint8_t idx) {
   servoWritePct(idx, 0);
 }
 
-// ---- Positional 300-degree helpers (servo 4 / idx 3) ----
+// ---- Positional 300-degree helpers (servo 3 / idx 2) ----
 
-static uint16_t servo4DegToUs(uint16_t deg) {
-  if (deg > SERVO4_DEG_MAX) deg = SERVO4_DEG_MAX;
-  return (uint16_t)(SERVO4_US_MIN +
-    (uint32_t)(SERVO4_US_MAX - SERVO4_US_MIN) * (uint32_t)deg / SERVO4_DEG_MAX);
+static uint16_t servo3DegToUs(uint16_t deg) {
+  if (deg > SERVO3_DEG_MAX) deg = SERVO3_DEG_MAX;
+  return (uint16_t)(SERVO3_US_MIN +
+    (uint32_t)(SERVO3_US_MAX - SERVO3_US_MIN) * (uint32_t)deg / SERVO3_DEG_MAX);
 }
 
-static void servo4WriteDeg(uint16_t deg) {
-  if (deg > SERVO4_DEG_MAX) deg = SERVO4_DEG_MAX;
-  servos[3].positionDeg = deg;
-  pca.setPWM(servos[3].channel, 0, usToTicks(servo4DegToUs(deg)));
+static void servo3WriteDeg(uint16_t deg) {
+  if (deg > SERVO3_DEG_MAX) deg = SERVO3_DEG_MAX;
+  servos[2].positionDeg = deg;
+  pca.setPWM(servos[2].channel, 0, usToTicks(servo3DegToUs(deg)));
 }
 
 // ======================= E-STOP HELPERS =======================
@@ -389,8 +388,7 @@ static void printServoSelectMenu() {
   Serial.println(F("\n=== SERVO MENU ==="));
   Serial.println(F("1) Servo 1  (continuous rotation)"));
   Serial.println(F("2) Servo 2  (continuous rotation)"));
-  Serial.println(F("3) Servo 3  (continuous rotation)"));
-  Serial.println(F("4) Servo 4  (300-degree positional)"));
+  Serial.println(F("3) Servo 3  (300-degree positional)"));
   Serial.println(F("b) Back"));
 }
 
@@ -409,9 +407,9 @@ static void printServoControlMenu(uint8_t idx) {
   Serial.println(F("us)"));
 }
 
-static void printServo4ControlMenu() {
-  ServoState &s = servos[3];
-  Serial.println(F("\n=== SERVO 4 (300-degree positional) ==="));
+static void printServo3ControlMenu() {
+  ServoState &s = servos[2];
+  Serial.println(F("\n=== SERVO 3 (300-degree positional) ==="));
   Serial.println(F("pos <0-300>  move to angle in degrees"));
   Serial.println(F("centre       move to 150 deg (centre)"));
   Serial.println(F("min          move to 0 deg   (full CCW)"));
@@ -419,16 +417,16 @@ static void printServo4ControlMenu() {
   Serial.println(F("status       show current position"));
   Serial.println(F("b            back"));
   Serial.print(F("Now: pos="));  Serial.print(s.positionDeg);
-  Serial.print(F("deg ("));      Serial.print(servo4DegToUs(s.positionDeg));
+  Serial.print(F("deg ("));      Serial.print(servo3DegToUs(s.positionDeg));
   Serial.println(F("us)"));
 }
 
-static void printServo4Status() {
-  ServoState &s = servos[3];
-  Serial.print(F("S4 [300-deg positional]: pos="));
+static void printServo3Status() {
+  ServoState &s = servos[2];
+  Serial.print(F("S3 [300-deg positional]: pos="));
   Serial.print(s.positionDeg);
   Serial.print(F("deg  pulse="));
-  Serial.print(servo4DegToUs(s.positionDeg));
+  Serial.print(servo3DegToUs(s.positionDeg));
   Serial.println(F("us"));
 }
 
@@ -484,7 +482,7 @@ static void handleDrillModSelect(const String& cmd) {
   Serial.println(F("Pick 1/2/3 or b"));
 }
 
-// Handler for continuous-rotation servos (idx 0-2)
+// Handler for continuous-rotation servos (idx 0-1)
 static void handleServoControlContinuous(uint8_t idx, const String& cmdRaw) {
   String word, args;
   splitCmd(cmdRaw, word, args);
@@ -539,8 +537,8 @@ static void handleServoControlContinuous(uint8_t idx, const String& cmdRaw) {
   Serial.println(F("? Use: f | r | stop | speed <0-100> | set <-100,100> | status | b"));
 }
 
-// Handler for the 300-degree positional servo (idx 3)
-static void handleServoControl4(const String& cmdRaw) {
+// Handler for the 300-degree positional servo (idx 2)
+static void handleServoControl3(const String& cmdRaw) {
   String word, args;
   splitCmd(cmdRaw, word, args);
   String w = lowerTrim(word);
@@ -548,21 +546,21 @@ static void handleServoControl4(const String& cmdRaw) {
   if (w == "b") { menuState = MenuState::SERVO_MENU; printServoSelectMenu(); return; }
 
   if (w == "centre" || w == "center") {
-    servo4WriteDeg(150);
+    servo3WriteDeg(150);
     Serial.print(F("Moved to 150deg -> "));
-    Serial.print(servo4DegToUs(150)); Serial.println(F("us"));
+    Serial.print(servo3DegToUs(150)); Serial.println(F("us"));
     return;
   }
   if (w == "min") {
-    servo4WriteDeg(0);
+    servo3WriteDeg(0);
     Serial.print(F("Moved to 0deg -> "));
-    Serial.print(servo4DegToUs(0)); Serial.println(F("us"));
+    Serial.print(servo3DegToUs(0)); Serial.println(F("us"));
     return;
   }
   if (w == "max") {
-    servo4WriteDeg(SERVO4_DEG_MAX);
-    Serial.print(F("Moved to ")); Serial.print(SERVO4_DEG_MAX);
-    Serial.print(F("deg -> ")); Serial.print(servo4DegToUs(SERVO4_DEG_MAX));
+    servo3WriteDeg(SERVO3_DEG_MAX);
+    Serial.print(F("Moved to ")); Serial.print(SERVO3_DEG_MAX);
+    Serial.print(F("deg -> ")); Serial.print(servo3DegToUs(SERVO3_DEG_MAX));
     Serial.println(F("us"));
     return;
   }
@@ -573,21 +571,21 @@ static void handleServoControl4(const String& cmdRaw) {
     }
     int v = args.toInt();
     if (v < 0) v = 0;
-    if (v > (int)SERVO4_DEG_MAX) v = (int)SERVO4_DEG_MAX;
-    servo4WriteDeg((uint16_t)v);
+    if (v > (int)SERVO3_DEG_MAX) v = (int)SERVO3_DEG_MAX;
+    servo3WriteDeg((uint16_t)v);
     Serial.print(F("Moved to ")); Serial.print(v);
-    Serial.print(F("deg -> ")); Serial.print(servo4DegToUs((uint16_t)v));
+    Serial.print(F("deg -> ")); Serial.print(servo3DegToUs((uint16_t)v));
     Serial.println(F("us"));
     return;
   }
-  if (w == "status") { printServo4Status(); return; }
+  if (w == "status") { printServo3Status(); return; }
 
   Serial.println(F("? Use: pos <0-300> | centre | min | max | status | b"));
 }
 
 // Dispatcher: routes to the correct handler based on which servo is active
 static void handleServoControl(uint8_t idx, const String& cmdRaw) {
-  if (idx == 3) handleServoControl4(cmdRaw);
+  if (idx == 2) handleServoControl3(cmdRaw);
   else          handleServoControlContinuous(idx, cmdRaw);
 }
 
@@ -595,9 +593,8 @@ static void handleServoSelect(const String& cmd) {
   if (cmd == "b") { menuState = MenuState::MAIN; printMainMenu(); return; }
   if (cmd == "1") { menuState = MenuState::SERVO_1; printServoControlMenu(0); return; }
   if (cmd == "2") { menuState = MenuState::SERVO_2; printServoControlMenu(1); return; }
-  if (cmd == "3") { menuState = MenuState::SERVO_3; printServoControlMenu(2); return; }
-  if (cmd == "4") { menuState = MenuState::SERVO_4; printServo4ControlMenu(); return; }
-  Serial.println(F("Pick 1/2/3/4 or b"));
+  if (cmd == "3") { menuState = MenuState::SERVO_3; printServo3ControlMenu(); return; }
+  Serial.println(F("Pick 1/2/3 or b"));
 }
 
 static int findRelayByName(const String& name) {
@@ -720,11 +717,11 @@ void setup() {
   pca.setPWMFreq(SERVO_PWM_FREQ);
   delay(10);
 
-  // Stop continuous-rotation servos (ch 0-2)
-  for (uint8_t i = 0; i < 3; i++) servoStop(i);
+  // Stop continuous-rotation servos (ch 0-1)
+  for (uint8_t i = 0; i < 2; i++) servoStop(i);
 
-  // Send positional servo 4 to its starting position (150 deg centre)
-  servo4WriteDeg(servos[3].positionDeg);
+  // Send positional servo 3 to its starting position (150 deg centre)
+  servo3WriteDeg(servos[2].positionDeg);
 
   for (uint8_t i = 0; i < RELAY_COUNT; i++) {
     pinMode(relays[i].pin, OUTPUT);
@@ -741,8 +738,8 @@ void setup() {
   pinMode(DRILLMOD2_ESTOP, INPUT_PULLUP);
 
   Serial.println(F("\n=== System Ready (Elegoo MEGA 2560) ==="));
-  Serial.println(F("PCA9685 ch0-2   : continuous-rotation servos (I2C: D20 SDA, D21 SCL)"));
-  Serial.println(F("PCA9685 ch3     : 300-degree positional servo"));
+  Serial.println(F("PCA9685 ch0-1   : continuous-rotation servos (I2C: D20 SDA, D21 SCL)"));
+  Serial.println(F("PCA9685 ch2     : 300-degree positional servo"));
   Serial.println(F("Relays          : D22-D26"));
   Serial.println(F("Linear Actuator : D2(IN1) D3(IN2) D4(PWM)"));
   Serial.println(F("Drill           : D5(IN1) D6(IN2) D7(PWM)"));
@@ -766,7 +763,6 @@ void loop() {
     case MenuState::SERVO_1:           handleServoControl(0, cmd);    break;
     case MenuState::SERVO_2:           handleServoControl(1, cmd);    break;
     case MenuState::SERVO_3:           handleServoControl(2, cmd);    break;
-    case MenuState::SERVO_4:           handleServoControl(3, cmd);    break;
     case MenuState::PUMPS_UV_MENU:     handlePumpsUvMenu(cmd);        break;
     case MenuState::PUMPS_UV_CONTROL:  handlePumpsUvControl(cmd);     break;
     case MenuState::ACTUATOR_MENU:     handleActuatorMenu(cmd);       break;
